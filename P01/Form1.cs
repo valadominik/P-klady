@@ -16,11 +16,6 @@ namespace P01
         {
             InitializeComponent();
         }
-
-       
-
-       
-
         private void button27_Click(object sender, EventArgs e)
         {
             string message = "";
@@ -44,8 +39,9 @@ namespace P01
             }
         }
 
-       
-
-       
+        private void click_pohyb(object sender, EventArgs e)
+        {
+            textBox2.Text += (sender as Button).Text;
+        }
     }
 }
