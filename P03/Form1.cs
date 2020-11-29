@@ -40,29 +40,29 @@ namespace P03
             }
             else
             {
-                label5.Text = "Nelze vypočítat průměr, není zadáno žádné číslo!";
+                label5.Text = "Nelze vypočítat průměr";
                 label5.Visible = true;
             }
             pocet = listBox1.SelectedItems.Count;
             if (pocet != 0)
             {
-                string server = listBox1.SelectedItem.ToString();
+                string slovo = listBox1.SelectedItem.ToString();
                 foreach (Control label in groupBox1.Controls)
                 {
                     if (label is Label)
                     {
-                        label.Text = server;
+                        label.Text = slovo;
                     }
                 }
             }
             else
             {
-                string server = "No Connection...";
+                string slovo = "nic jsi nevybral";
                 foreach (Control label in groupBox1.Controls)
                 {
                     if (label is Label)
                     {
-                        label.Text = server;
+                        label.Text = slovo;
                     }
                 }
             }
