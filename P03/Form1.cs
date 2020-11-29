@@ -16,5 +16,56 @@ namespace P03
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            double prumer = 0;int cislo,pocet=0;
+            foreach(Control textbox in groupBox1.Controls)
+            {
+                if (textbox is TextBox)
+                {
+                    if (textbox.Text != "")
+                    {
+                        cislo = Convert.ToInt32(textbox.Text);
+                        prumer += cislo;
+                        pocet++;
+                    }
+                }
+            }
+            if (pocet!=0)
+            {
+                prumer /= pocet;
+                label5.Text = "Průměr ze zadaných čísel je: " + Convert.ToString(prumer);
+                label5.Visible = true;
+            }
+            else
+            {
+                label5.Text = "Nelze vypočítat průměr, není zadáno žádné číslo!";
+                label5.Visible = true;
+            }
+            pocet = listBox1.SelectedItems.Count;
+            if (pocet != 0)
+            {
+                string server = listBox1.SelectedItem.ToString();
+                foreach (Control label in groupBox1.Controls)
+                {
+                    if (label is Label)
+                    {
+                        label.Text = server;
+                    }
+                }
+            }
+            else
+            {
+                string server = "No Connection...";
+                foreach (Control label in groupBox1.Controls)
+                {
+                    if (label is Label)
+                    {
+                        label.Text = server;
+                    }
+                }
+            }
+        }
     }
 }
